@@ -80,7 +80,7 @@ export default function CTA() {
               📧 Email: <span className="text-blue-400 font-semibold">hello@fahartech.com</span>
             </p>
             <p className="text-slate-300 mt-2">
-              📞 Phone: <span className="text-blue-400 font-semibold">+254 (0) XXX XXX XXX</span>
+              📞 Phone: <span className="text-blue-400 font-semibold">+254 716 957 179</span>
             </p>
           </motion.div>
         </motion.div>
