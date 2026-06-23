@@ -10,7 +10,7 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export default function Navigation() {
+export default function Navigation({ onContactClick }: { onContactClick: () => void }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -71,6 +71,7 @@ export default function Navigation() {
             transition={{ delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={onContactClick}
             className="hidden lg:inline-flex px-6 py-2.5 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Get Started
@@ -110,6 +111,7 @@ export default function Navigation() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={onContactClick}
               className="w-full mt-4 px-6 py-2.5 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Get Started

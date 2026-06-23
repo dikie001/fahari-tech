@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-export default function CTA() {
+export default function CTA({ onContactClick }: { onContactClick: () => void }) {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Background Elements */}

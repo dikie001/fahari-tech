@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-export default function Hero() {
+export default function Hero({ onContactClick }: { onContactClick: () => void }) {
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -22,10 +22,18 @@ export default function Hero() {
     },
   }
 
+  const handleStartProject = () => {
+    onContactClick()
+  }
+
+  const handleViewPortfolio = () => {
+    window.location.href = '#projects'
+  }
+
   return (
     <section
       id="home"
-      className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center"
+      className="relative pt-20 pb-16 lg:pt-28 lg:pb-16 overflow-hidden min-h-screen flex items-center"
       style={{
         backgroundImage: `url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&h=900&fit=crop')`,
         backgroundSize: 'cover',
@@ -33,8 +41,8 @@ export default function Hero() {
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Dark Overlay Gradient - Left to Right - More Transparent */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-100/80 to-transparent"></div>
+      {/* Overlay - Much lighter for visibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/50 to-transparent"></div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -43,7 +51,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="space-y-8 max-w-2xl"
+          className="space-y-4 max-w-2xl"
         >
 
           {/* Badge */}
@@ -76,12 +84,13 @@ export default function Hero() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 pt-6"
+            className="flex flex-col sm:flex-row gap-4 pt-0"
           >
             <motion.button
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 transition-all flex items-center justify-center gap-2 group w-fit"
+              onClick={handleStartProject}
+              className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group w-fit"
             >
               Start Your Project
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -90,7 +99,8 @@ export default function Hero() {
             <motion.button
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-white/90 border-2 border-slate-200 text-slate-900 rounded-xl font-semibold hover:border-blue-300 hover:bg-white backdrop-blur-sm transition-all flex items-center justify-center gap-2 group w-fit"
+              onClick={handleViewPortfolio}
+              className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group w-fit"
             >
               View Portfolio
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -100,7 +110,7 @@ export default function Hero() {
           {/* Stats */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-3 gap-6 pt-12 max-w-lg"
+            className="grid grid-cols-3 gap-6 pt-2 max-w-lg"
           >
             <div className="space-y-1">
               <p className="text-3xl font-bold text-slate-900">50+</p>
