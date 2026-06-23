@@ -28,24 +28,25 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
+          <motion.a
+            href="#home"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center"
+            className="flex items-center bg-white rounded-lg p-1.5 hover:shadow-md transition-shadow"
           >
-            <div className="text-2xl lg:text-3xl font-bold">
-              <span className="text-slate-900">Fahari</span>
-              <span className="text-blue-600">Tech</span>
-            </div>
-          </motion.div>
+            <img
+              src="/logo.png"
+              alt="Fahari Technologies Logo"
+              className="h-8 lg:h-10 w-auto"
+            />
+          </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">

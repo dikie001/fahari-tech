@@ -63,9 +63,12 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-2 space-y-4"
           >
-            <div className="text-2xl font-bold">
-              <span className="text-white">Fahari</span>
-              <span className="text-blue-400">Tech</span>
+            <div className="bg-white rounded-lg p-2 inline-block">
+              <img
+                src="/logo.png"
+                alt="Fahari Technologies Logo"
+                className="h-8 w-auto"
+              />
             </div>
 
             <p className="text-slate-400 leading-relaxed">
