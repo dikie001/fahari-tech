@@ -44,9 +44,13 @@ const socialLinks = [
   { icon: Instagram, label: 'Instagram', href: '#' },
 ]
 
-export default function Footer({ onSocialClick }: { onSocialClick: () => void }) {
+export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleSocialClick = () => {
+    alert('Coming soon! Follow us on social media.')
   }
 
   return (
@@ -111,7 +115,7 @@ export default function Footer({ onSocialClick }: { onSocialClick: () => void })
                 return (
                   <motion.button
                     key={social.label}
-                    onClick={onSocialClick}
+                    onClick={handleSocialClick}
                     whileHover={{ scale: 1.2, y: -4 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white cursor-pointer"
