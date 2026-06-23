@@ -23,11 +23,11 @@ export default function Hero({ onContactClick }: { onContactClick: () => void })
   }
 
   const handleStartProject = () => {
-    onContactClick()
+    window.location.href = '#projects'
   }
 
-  const handleViewPortfolio = () => {
-    window.location.href = '#projects'
+  const handleContact = () => {
+    onContactClick()
   }
 
   return (
@@ -41,8 +41,8 @@ export default function Hero({ onContactClick }: { onContactClick: () => void })
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Overlay - Optimized for text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/65 to-white/50"></div>
+      {/* Overlay - Strong white on left, fading to transparent on right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent"></div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -92,17 +92,17 @@ export default function Hero({ onContactClick }: { onContactClick: () => void })
               onClick={handleStartProject}
               className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group w-fit"
             >
-              Start Your Project
+              View Projects
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              onClick={handleViewPortfolio}
+              onClick={handleContact}
               className="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group w-fit"
             >
-              View Portfolio
+              Contact Us
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </motion.div>
