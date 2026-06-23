@@ -49,6 +49,11 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const handleSocialClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    alert('Coming soon! Follow us on social media.')
+  }
+
   return (
     <footer className="bg-slate-900 text-slate-300">
       {/* Main Footer */}
@@ -88,11 +93,11 @@ export default function Footer() {
 
               <motion.a
                 whileHover={{ x: 4 }}
-                href="tel:+254-XXX-XXX-XXX"
+                href="tel:+254716957179"
                 className="flex items-center gap-3 hover:text-blue-400 transition-colors"
               >
                 <Phone size={18} />
-                <span>+254 (0) XXX XXX XXX</span>
+                <span>+254 716 957 179</span>
               </motion.a>
 
               <motion.div
@@ -109,16 +114,16 @@ export default function Footer() {
               {socialLinks.map((social) => {
                 const Icon = social.icon
                 return (
-                  <motion.a
+                  <motion.button
                     key={social.label}
-                    href={social.href}
+                    onClick={handleSocialClick}
                     whileHover={{ scale: 1.2, y: -4 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white"
-                    aria-label={social.label}
+                    className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-slate-400 hover:text-white cursor-pointer"
+                    title="Coming soon"
                   >
                     <Icon size={20} />
-                  </motion.a>
+                  </motion.button>
                 )
               })}
             </div>

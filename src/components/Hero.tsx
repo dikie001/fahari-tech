@@ -41,8 +41,8 @@ export default function Hero({ onContactClick }: { onContactClick: () => void })
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Overlay - Much lighter for visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/50 to-transparent"></div>
+      {/* Overlay - Optimized for text visibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/65 to-white/50"></div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -64,19 +64,19 @@ export default function Hero({ onContactClick }: { onContactClick: () => void })
 
           {/* Heading */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-lg">
+              <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 bg-clip-text text-transparent drop-shadow-lg">
                 Digital Solutions
               </span>
               <br />
-              <span className="text-white drop-shadow-lg">That Transform</span>
+              <span className="text-slate-900 drop-shadow-md">That Transform</span>
             </h1>
           </motion.div>
 
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-xl text-white drop-shadow-lg leading-relaxed max-w-xl"
+            className="text-lg lg:text-xl text-slate-900 drop-shadow-md leading-relaxed max-w-xl font-medium"
           >
             We craft elegant, high-performance websites and business systems that drive growth. From concept to launch, we deliver solutions tailored to your success.
           </motion.p>
@@ -113,16 +113,16 @@ export default function Hero({ onContactClick }: { onContactClick: () => void })
             className="grid grid-cols-3 gap-6 pt-2 max-w-lg"
           >
             <div className="space-y-1">
-              <p className="text-3xl font-bold text-slate-900">50+</p>
-              <p className="text-sm text-slate-600">Projects Delivered</p>
+              <p className="text-3xl font-bold text-slate-900 drop-shadow-md">50+</p>
+              <p className="text-sm font-medium text-slate-800">Projects Delivered</p>
             </div>
             <div className="space-y-1">
-              <p className="text-3xl font-bold text-slate-900">100+</p>
-              <p className="text-sm text-slate-600">Happy Clients</p>
+              <p className="text-3xl font-bold text-slate-900 drop-shadow-md">100+</p>
+              <p className="text-sm font-medium text-slate-800">Happy Clients</p>
             </div>
             <div className="space-y-1">
-              <p className="text-3xl font-bold text-slate-900">9+</p>
-              <p className="text-sm text-slate-600">Years Experience</p>
+              <p className="text-3xl font-bold text-slate-900 drop-shadow-md">9+</p>
+              <p className="text-sm font-medium text-slate-800">Years Experience</p>
             </div>
           </motion.div>
         </motion.div>
