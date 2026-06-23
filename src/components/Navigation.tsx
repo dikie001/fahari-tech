@@ -57,7 +57,7 @@ export default function Navigation({ onContactClick }: { onContactClick: () => v
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * (index + 1) }}
-                className="px-4 py-2 text-slate-700 hover:text-blue-600 transition-colors font-medium"
+                className="px-4 py-2 text-slate-800 hover:text-blue-600 transition-colors font-semibold"
               >
                 {item.label}
               </motion.a>
