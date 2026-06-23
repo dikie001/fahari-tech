@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import heroImage from '../assets/hero.png'
 
 export default function Hero() {
   const itemVariants = {
@@ -28,14 +27,14 @@ export default function Hero() {
       id="home"
       className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center"
       style={{
-        backgroundImage: `url('${heroImage}')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&h=900&fit=crop')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center right',
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Dark Overlay Gradient - Left to Right */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent"></div>
+      {/* Dark Overlay Gradient - Left to Right - More Transparent */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-100/80 to-transparent"></div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -46,10 +45,11 @@ export default function Hero() {
           viewport={{ once: true, margin: '-100px' }}
           className="space-y-8 max-w-2xl"
         >
+
           {/* Badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700">
-              <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md border border-white/40 rounded-full text-sm font-medium text-white">
+              <span className="w-2 h-2 bg-white rounded-full"></span>
               Innovating Since 2015
             </span>
           </motion.div>
@@ -57,18 +57,18 @@ export default function Hero() {
           {/* Heading */}
           <motion.div variants={itemVariants} className="space-y-4">
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
                 Digital Solutions
               </span>
               <br />
-              <span className="text-slate-700">That Transform</span>
+              <span className="text-white drop-shadow-lg">That Transform</span>
             </h1>
           </motion.div>
 
           {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-xl text-slate-700 leading-relaxed max-w-xl"
+            className="text-xl text-white drop-shadow-lg leading-relaxed max-w-xl"
           >
             We craft elegant, high-performance websites and business systems that drive growth. From concept to launch, we deliver solutions tailored to your success.
           </motion.p>
